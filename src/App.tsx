@@ -17,7 +17,7 @@ function App() {
   }, [addTab]);
 
   return (
-    <div className="flex h-screen theme-transition rounded-2xl" style={{
+    <div className="flex h-screen transition-colors rounded-2xl text-light-1" style={{
       background: currentTheme ? `linear-gradient(to bottom right, ${currentTheme.colors.background.start}, ${currentTheme.colors.background.end})` : undefined
     }}>
       <Sidebar />

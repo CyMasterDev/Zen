@@ -125,7 +125,7 @@ export function Browser() {
         <div className="w-full h-full flex items-center justify-center rounded-2xl relative overflow-hidden">
           <img className='new-tab-background' src={`${currentTheme?.wallpaper}`}/>
           <div className="scale-up-animation w-full max-w-lg p-12 flex-col items-center z-10">
-            <h1 className="h1-bold text-center mb-5">
+            <h1 className="h1-bold text-center mb-5 space_grotesk">
               Zen
             </h1>
             <form onSubmit={handleSubmit} className="flex-1">

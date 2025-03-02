@@ -271,3 +271,7 @@
 .new-tab-background {
   @apply object-cover w-full h-full z-0 absolute;
 }
+
+.space_grotesk {
+  font-family: 'Space Grotesk', sans-serif;
+}
