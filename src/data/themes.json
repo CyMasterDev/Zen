@@ -1,0 +1,99 @@
+{
+  "themes": [
+    {
+      "id": "dark",
+      "name": "Dark",
+      "colors": {
+        "primary": "#877EFF",
+        "secondary": "#FFB620",
+        "background": {
+          "start": "#000000",
+          "end": "#09090A"
+        },
+        "card": "rgba(255, 255, 255, 0.05)",
+        "text": {
+          "primary": "#FFFFFF",
+          "secondary": "#EFEFEF",
+          "tertiary": "#7878A3"
+        }
+      },
+      "wallpaper": "/wallpapers/Midnight_Maelstrom.png"
+    },
+    {
+      "id": "midnight",
+      "name": "Midnight Blue",
+      "colors": {
+        "primary": "#6366F1",
+        "secondary": "#22D3EE",
+        "background": {
+          "start": "#0F172A",
+          "end": "#1E293B"
+        },
+        "card": "rgba(255, 255, 255, 0.05)",
+        "text": {
+          "primary": "#FFFFFF",
+          "secondary": "#E2E8F0",
+          "tertiary": "#94A3B8"
+        }
+      },
+      "wallpaper": "/wallpapers/midnight.jpg"
+    },
+    {
+      "id": "sunset",
+      "name": "Sunset",
+      "colors": {
+        "primary": "#F97316",
+        "secondary": "#FACC15",
+        "background": {
+          "start": "#7F1D1D",
+          "end": "#991B1B"
+        },
+        "card": "rgba(255, 255, 255, 0.07)",
+        "text": {
+          "primary": "#FFFFFF",
+          "secondary": "#FEF3C7",
+          "tertiary": "#FED7AA"
+        }
+      },
+      "wallpaper": "/wallpapers/sunset.jpg"
+    },
+    {
+      "id": "forest",
+      "name": "Forest",
+      "colors": {
+        "primary": "#10B981",
+        "secondary": "#FACC15",
+        "background": {
+          "start": "#064E3B",
+          "end": "#065F46"
+        },
+        "card": "rgba(255, 255, 255, 0.05)",
+        "text": {
+          "primary": "#FFFFFF",
+          "secondary": "#D1FAE5",
+          "tertiary": "#A7F3D0"
+        }
+      },
+      "wallpaper": "/wallpapers/forest.jpg"
+    },
+    {
+      "id": "nord",
+      "name": "Nord",
+      "colors": {
+        "primary": "#88C0D0",
+        "secondary": "#EBCB8B",
+        "background": {
+          "start": "#2E3440",
+          "end": "#3B4252"
+        },
+        "card": "rgba(255, 255, 255, 0.05)",
+        "text": {
+          "primary": "#ECEFF4",
+          "secondary": "#E5E9F0",
+          "tertiary": "#D8DEE9"
+        }
+      },
+      "wallpaper": "/wallpapers/nord.jpg"
+    }
+  ]
+}

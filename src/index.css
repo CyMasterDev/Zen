@@ -1,0 +1,273 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+    @apply box-border list-none p-0 m-0 scroll-smooth;
+  }
+  
+  body {
+    @apply bg-black text-white overscroll-none;
+    font-family: 'Inter', sans-serif
+  }
+
+  * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+@layer components {
+  /* Button styles */
+  .btn-icon {
+    @apply w-10 h-10 rounded-full hover:bg-white/10 flex items-center justify-center
+           transition-all active:scale-90 shadow-lg shadow-white/5
+           backdrop-blur-lg active:bg-white/20 active:shadow-white/10;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 rounded-lg bg-primary-500 hover:bg-primary-600 text-white
+           transition-all active:scale-95 shadow-lg shadow-primary-500/20;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white
+           transition-all active:scale-95 shadow-lg shadow-white/5;
+  }
+
+  /* Input styles */
+  .input-search {
+    @apply w-full h-10 bg-white/0 rounded-full pl-12 pr-4
+           text-sm text-light-1 placeholder-white/40 
+           focus:outline-none focus:ring-2 focus:ring-white/20 
+           focus:bg-white/20 transition-all shadow-lg shadow-white/5 backdrop-blur-lg focus:shadow-white/10;
+  }
+
+  .input-standard {
+    @apply w-full h-12 bg-white/5 rounded-xl px-4
+           text-sm text-light-1 placeholder-white/40
+           focus:outline-none focus:ring-2 focus:ring-white/20
+           transition-all shadow-lg shadow-white/5;
+  }
+
+  /* Card styles */
+  .card {
+    @apply bg-white/5 rounded-2xl p-6 shadow-lg shadow-black/10 backdrop-blur-sm;
+  }
+
+  /* Select styles */
+  .select-standard {
+    @apply w-full h-12 bg-white/5 rounded-xl px-4
+           text-sm text-light-1 appearance-none cursor-pointer
+           focus:outline-none active:ring-2 active:ring-white/20
+           bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xIDFMNiA2TDExIDEiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=')] 
+           bg-[length:12px_8px] bg-[right_16px_center] bg-no-repeat;
+  }
+
+  /* Tab styles */
+  .tab-item {
+    @apply max-w-full h-12 rounded-full transition-all cursor-pointer p-3
+           flex items-center gap-3
+           backdrop-blur-lg shadow-lg will-change-transform active:bg-white/20 active:shadow-white/10 active:scale-95;
+  }
+
+  .tab-item-active {
+    @apply bg-white/20 shadow-white/10;
+  }
+
+  .tab-item-inactive {
+    @apply hover:bg-white/10 hover:shadow-white/5;
+  }
+
+  /* Content frame */
+  .content-frame {
+    @apply w-full h-screen rounded-2xl overflow-hidden;
+  }
+
+  /* Settings sidebar */
+  .settings-sidebar {
+    @apply w-64 h-full border-r border-white/10 p-4 space-y-2;
+  }
+
+  .settings-sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-full cursor-pointer transition-all;
+  }
+
+  .settings-sidebar-item-active {
+    @apply bg-white/10 text-light-1;
+  }
+
+  .settings-sidebar-item-inactive {
+    @apply hover:bg-white/5 text-light-3;
+  }
+
+  /* Custom dropdown */
+  .dropdown {
+    @apply relative;
+  }
+
+  .dropdown-content {
+    @apply absolute top-full left-0 mt-2 w-full bg-dark-3 rounded-xl shadow-lg shadow-black/20 
+           backdrop-blur-lg z-50 overflow-hidden transition-all duration-200 ease-in-out;
+  }
+
+  .dropdown-item {
+    @apply px-4 py-3 hover:bg-white/10 cursor-pointer transition-all text-light-2 hover:text-light-1;
+  }
+}
+
+@layer utilities {
+  /* TYPOGRAPHY */
+  .mega-bold {
+    @apply text-[72px] font-bold leading-[140%] tracking-tighter;
+  }
+
+  .h1-bold {
+    @apply text-[36px] font-bold leading-[140%] tracking-tighter text-light-1;
+  }
+
+  .h1-semibold {
+    @apply text-[36px] font-semibold leading-[140%] tracking-tighter text-light-1;
+  }
+
+  .h2-bold {
+    @apply text-[30px] font-bold leading-[140%] tracking-tighter text-light-1;
+  }
+
+  .h3-bold {
+    @apply text-[24px] font-bold leading-[140%] tracking-tighter text-light-1;
+  }
+
+  .base-semibold {
+    @apply text-[16px] font-semibold leading-[140%] tracking-tighter text-light-1;
+  }
+
+  .base-medium {
+    @apply text-[16px] font-medium leading-[140%] text-light-2;
+  }
+
+  .base-regular {
+    @apply text-[16px] font-normal leading-[140%] text-light-2;
+  }
+
+  .body-bold {
+    @apply text-[18px] font-bold leading-[140%] text-light-1;
+  }
+
+  .body-medium {
+    @apply text-[18px] font-medium leading-[140%] text-light-2;
+  }
+
+  .small-semibold {
+    @apply text-[14px] font-semibold leading-[140%] tracking-tighter text-light-1;
+  }
+
+  .small-medium {
+    @apply text-[14px] font-medium leading-[140%] text-light-2;
+  }
+
+  .small-regular {
+    @apply text-[14px] font-normal leading-[140%] text-light-3;
+  }
+
+  .subtle-semibold {
+    @apply text-[12px] font-semibold leading-[140%] text-light-2;
+  }
+
+  .tiny-medium {
+    @apply text-[10px] font-medium leading-[140%] text-light-3;
+  }
+
+  /* UTILITIES */
+  .invert-white {
+    @apply invert brightness-0 transition;
+  }
+
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .flex-start {
+    @apply flex justify-start items-center;
+  }
+}
+
+.glassmorphism {
+  @apply bg-white/10 backdrop-blur-2xl border border-white/10 shadow-lg shadow-white/5;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-white/20 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/30;
+}
+
+/* Animations */
+@keyframes scale-up {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.scale-up-animation {
+  animation: scale-up 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-all duration-300;
+}
+
+/* Tab width restriction */
+.tab-title {
+  @apply max-w-[150px] truncate;
+  mask-image: linear-gradient(to left, transparent, black 20px);
+}
+
+.frame {
+  max-height: calc(100vh - 5rem)
+}
+
+/* Theme transitions */
+.theme-transition {
+  @apply transition-all duration-500 ease-in-out;
+}
+
+/* Sidebar collapse animation */
+.sidebar-expanded {
+  width: 280px;
+}
+
+.sidebar-collapsed {
+  display: none;
+}
+
+/* New tab background */
+.new-tab-background {
+  @apply object-cover w-full h-full z-0 absolute;
+}
