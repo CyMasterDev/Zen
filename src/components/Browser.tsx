@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { useSettingsStore } from '../store/settings';
 import { Search } from 'lucide-react';
 import { useTheme } from '../hooks/useTheme';
+import { cn } from '../lib/utils';
 
 export function Browser() {
   const { tabs, activeTabId, updateTab, setLoading, addTab } = useBrowserStore();
@@ -103,11 +104,14 @@ export function Browser() {
     setLoading(activeTabId, true);
 
     try {
+      const encodedUrl = btoa(url);
+      const proxyUrl = `/uv/service/${encodedUrl}`;
+
       // Attempt to fetch favicon
       const favicon = `https://www.google.com/s2/favicons?domain=${url}&sz=128`;
 
       updateTab(activeTabId, {
-        url: url,
+        url: proxyUrl,
         title: url,
         favicon,
       });
@@ -123,7 +127,7 @@ export function Browser() {
     if (activeTab.url === 'about:blank') {
       return (
         <div className="w-full h-full flex items-center justify-center rounded-2xl relative overflow-hidden">
-          <img className='new-tab-background' src={`${currentTheme?.wallpaper}`}/>
+          <img className='new-tab-background' src={`${currentTheme?.wallpaper}`} />
           <div className="scale-up-animation w-full max-w-lg p-12 flex-col items-center z-10">
             <h1 className="h1-bold text-center mb-5 space_grotesk">
               Zen
@@ -156,34 +160,17 @@ export function Browser() {
       );
     }
 
-    // For external URLs, display a message about WebContainer limitations
-    if (activeTab.url.startsWith('http://') || activeTab.url.startsWith('https://')) {
-      return (
-        <div className="w-full h-full flex items-center justify-center rounded-2xl bg-dark-3">
-          <div className="scale-up-animation w-full max-w-lg p-12 flex-col items-center text-center">
-            <h2 className="h2-bold mb-4">WebContainer Limitation</h2>
-            <p className="base-medium mb-6">
-              Due to WebContainer security restrictions, external websites cannot be directly embedded.
-            </p>
-            <div className="bg-dark-4 p-4 rounded-lg mb-6 text-left">
-              <p className="small-medium mb-2">Attempted to navigate to:</p>
-              <p className="base-semibold text-primary-500 break-all">{activeTab.url}</p>
-            </div>
-            <p className="small-medium text-light-3">
-              In a production environment, this would load the website through the Ultraviolet proxy.
-            </p>
-          </div>
-        </div>
-      );
-    }
-
     return (
-      <div className="w-full h-full flex items-center justify-center rounded-2xl bg-dark-3">
-        <div className="scale-up-animation text-center">
-          <h2 className="h2-bold mb-4">Unknown URL</h2>
-          <p className="base-medium">{activeTab.url}</p>
-        </div>
-      </div>
+      <iframe
+        key={activeTab.id}
+        src={activeTab.url}
+        id="iframe"
+        className={cn(
+          "w-full h-full border-none transition-opacity duration-300 z-50",
+          activeTab.loading && "animate-pulse"
+        )}
+        title={activeTab.title}
+      />
     );
   };
 
